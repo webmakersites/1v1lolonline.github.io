@@ -1,0 +1,109 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>1v1.LOL - TBG95</title>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script type="text/javascript" async="" src="https://ssl.cdne.cpmstar.com/cached/zonemasters/cpmstarjsgameapi.js?ver=1199"></script>
+    <script type="text/javascript" async="" src="https://ssl.cdne.cpmstar.com/cached/zonemasters/mobilemodules.js?ver=1199"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://server.cpmstar.com/cached/zonefiles/372_49986_1v1.js?rnd=688063"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-remote-config.js"></script>
+    <script src="js/dependencyLoader.js"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-118283086-6"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="js/ads-prebid.js"></script> -->
+    <script src="js/IronSourceRV.js"></script>
+    <!-- <script src="js/cpmstar.js"></script> -->
+    <!-- <script src="js/adsController.js"></script> -->
+    <!-- <script src="js/googleAnalytics.js"></script> -->
+    <script src="js/firebase.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/firestore.js"></script>
+    <script src="js/unityUrls.js"></script>
+    <script src="js/unityGame.js"></script>
+    <script src="js/mobileRedirect.js"></script>
+    <script src="js/fullscreen.js"></script>
+    <script src="js/windowResize.js"></script>
+    <!-- <script src="js/adblockManager.js"></script> -->
+    <script src="js/macUserAgent.js"></script>
+    <script src="js/visibilityChangeListener.js"></script>
+    <script src="PC/payment/js/xsolla.js"></script>
+    <script type="text/javascript" src="/cloak.js"></script>
+    <meta name="robots" content="noindex,nofollow" />
+    <script>
+      var gameLoaded = false;
+      window.addEventListener("beforeunload", function(e) {
+        if (adsVisible || !gameLoaded || !lockedOccured) return null;
+        var confirmationMessage = 'Are you sure you want to leave? ';
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+      });
+      window.alert = function(e) {
+        console.log(e)
+      };
+    </script>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png?v2">
+    
+    <meta property="og:title" content="1v1.LOL">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="https://1v1.lol/splash.jpg">
+    <meta property="og:description" content="Discover 1v1, the online building simulator &amp; third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Discover 1v1, the online building simulator &amp; third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
+    <meta name="keywords" content="just,build,simulator,practice,free,online,battle,royale">
+ 
+  </head>
+  <body>
+    <div class="ads">
+      <div class="ad-smallscreen">
+        <div class="ad ad-rectangle-bottom" id="adRectangleBottom" style="transform: scale(0.484848); display: none;">
+          <div id="/JustBuild.lol_[IO]/$83025">
+            <iframe scrolling="no" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" allowtransparency="true" width="300" height="250" style="border-width: 0px;"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="ad ad-rectangle-upper" id="adRectangleUpper" style="transform: scale(0.484848); display: none;">
+
+        <!-- <div style="width:300px;height:250px" class="fsivkkf">
+          <div id="/JustBuild.lol_[IO]/$83023">
+            <iframe scrolling="no" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" allowtransparency="true" width="300" height="250" style="border-width: 0px;"></iframe>
+          </div>
+        </div> -->
+      </div>
+      <div class="ad-largescreen">
+        <div class="ad ad-leaderboard-bottom" style="transform: scale(0.484848); display: none;">
+
+          <!-- <div style="width:300px;height:600px" class="qsiwxi6">
+            <div id="/JustBuild.lol_[IO]/$85420">
+              <iframe scrolling="no" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" allowtransparency="true" width="300" height="600" style="border-width: 0px;"></iframe>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div id="interAdsContainer" style="display: none;"></div>
+    <div id="gameContainer" style="padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(0, 0, 0);">
+      <canvas id="#canvas" style="width: 100%; height: 100%; cursor: none;" width="640" height="360"></canvas>
+    </div>
+    <div id="loader" style="display: none;">
+      <img class="logo" src="img/logo.png">
+      <div class="spinner" style="display: none;"></div>
+      <div class="progress" style="display: block;">
+        <div class="full" style="transform: scaleX(1);"></div>
+      </div>
+    </div>
+    <div id="unity-loader-div">
+    
+    </div>
+
+
+  </body>
+</html>
